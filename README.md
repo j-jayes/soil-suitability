@@ -1,6 +1,3 @@
-Readme
-================
-
 ## Purpose
 
 Collect soil quality data and aggregate up to NUTS2 level to join to
