@@ -1,0 +1,174 @@
+id;nuts;region;country;suitability_class_mean;suitability_class_max;suitability_class_min
+1;AT11;Burgenland;Austria; 3,96 ; 10 ; 2 
+2;AT12+AT13;Lower Austria;Austria; 4,12 ; 8 ; 2 
+3;AT21;Carinthia;Austria; 6,76 ; 9 ; 2 
+4;AT22;Styria;Austria; 6,49 ; 9 ; 2 
+5;AT31;Upper Austria;Austria; 4,59 ; 9 ; 2 
+6;AT32;Salzburg;Austria; 7,79 ; 9 ; 2 
+7;AT33;Tyrol;Austria; 8,32 ; 9 ; 5 
+8;AT34;Vorarlberg;Austria; 7,84 ; 9 ; 5 
+9;BE10+BE24+BE31;Brabant;Belgium; 3,59 ; 6 ; 2 
+10;BE21;Antwerp;Belgium; 5,07 ; 8 ; 4 
+11;BE22;Limburg;Belgium; 4,75 ; 6 ; 2 
+12;BE23;East-Flanders;Belgium; 4,35 ; 7 ; 2 
+13;BE25;West-Flanders;Belgium; 4,63 ; 6 ; 3 
+14;BE32;Hainaut;Belgium; 3,25 ; 7 ; 2 
+15;BE33;Liege;Belgium; 4,03 ; 7 ; 2 
+16;BE34;Luxembourg (region);Belgium; 4,35 ; 5 ; 3 
+17;BE35;Namur;Belgium; 3,20 ; 6 ; 2 
+18;CH01;Région lémanique;Switzerland; 7,59 ; 10 ; 3 
+19;CH02;Espace Mittelland;Switzerland; 6,12 ; 10 ; 3 
+20;CH03;Nordwestschweiz;Switzerland; 4,51 ; 6 ; 3 
+21;CH04;Zürich;Switzerland; 4,45 ; 7 ; 3 
+22;CH05;Ostschweiz;Switzerland; 7,76 ; 10 ; 3 
+23;CH06;Zentralschweiz;Switzerland; 6,87 ; 9 ; 4 
+24;CH07;Ticino;Switzerland; 8,34 ; 9 ; 6 
+25;DE11;Stuttgart, Regierungsbezirk;Germany; 3,88 ; 8 ; 2 
+26;DE12;Karlsruhe, Regierungsbezirk;Germany; 4,27 ; 7 ; 2 
+27;DE13;Freiburg, Regierungsbezirk;Germany; 4,83 ; 10 ; 2 
+28;DE14;Tübingen, Regierungsbezirk;Germany; 3,54 ; 10 ; 2 
+29;DE21;Oberbayern, Regierungsbezirk;Germany; 3,80 ; 10 ; 2 
+30;DE22;Niederbayern, Regierungsbezirk;Germany; 3,65 ; 6 ; 2 
+31;DE23;Oberpfalz, Regierungsbezirk;Germany; 4,77 ; 6 ; 2 
+32;DE24;Oberfranken, Regierungsbezirk;Germany; 5,08 ; 6 ; 3 
+33;DE25;Mittelfranken, Regierungsbezirk;Germany; 5,08 ; 7 ; 3 
+34;DE26;Unterfranken, Regierungsbezirk;Germany; 4,53 ; 6 ; 2 
+35;DE27;Schwaben, Regierungsbezirk;Germany; 3,91 ; 10 ; 2 
+36;DE30;Berlin;Germany; 7,36 ; 9 ; 6 
+37;DE40;Brandenburg;Germany; 4,96 ; 7 ; 2 
+38;DE50;Bremen;Germany; 5,86 ; 7 ; 5 
+39;DE60;Hamburg;Germany; 6,25 ; 8 ; 4 
+40;DE71+DE72;Darmstadt and Giessen;Germany; 3,80 ; 7 ; 2 
+41;DE73;Kassel, Regierungsbezirk;Germany; 4,41 ; 6 ; 2 
+42;DE80;Mecklenburg-Vorpommern;Germany; 4,30 ; 10 ; 2 
+43;DE91+DE92;Statistische Regionen Braunschweig und Hannover;Germany; 4,58 ; 7 ; 2 
+44;DE93;Statistische Region Lüneburg;Germany; 5,35 ; 6 ; 3 
+45;DE94;Statistische Region Weser-Ems;Germany; 5,47 ; 7 ; 3 
+46;DEA1;Düsseldorf, Regierungsbezirk;Germany; 4,71 ; 8 ; 3 
+47;DEA2;Köln, Regierungsbezirk;Germany; 4,57 ; 8 ; 3 
+48;DEA3;Münster, Regierungsbezirk;Germany; 5,52 ; 7 ; 3 
+49;DEA4;Detmold, Regierungsbezirk;Germany; 4,29 ; 6 ; 3 
+50;DEA5;Arnsberg, Regierungsbezirk;Germany; 4,81 ; 7 ; 3 
+51;DEB1;Statistische Region Koblenz;Germany; 4,43 ; 6 ; 2 
+52;DEB2;Statistische Region Trier;Germany; 4,67 ; 6 ; 3 
+53;DEB3;Statistische Region Rheinhessen-Pfalz;Germany; 4,39 ; 6 ; 2 
+54;Dec-00;Saarland;Germany; 4,62 ; 5 ; 4 
+55;DED2;Dresden, NUTS 2-Region;Germany; 4,09 ; 7 ; 2 
+56;DED4;Chemnitz, NUTS 2-Region;Germany; 4,16 ; 6 ; 2 
+57;DED5;Leipzig, NUTS 2-Region;Germany; 3,27 ; 6 ; 2 
+58;DEE0;Sachsen-Anhalt;Germany; 3,67 ; 7 ; 2 
+59;DEF0;Schleswig-Holstein;Germany; 4,53 ; 7 ; 2 
+60;DEG0;Thüringen;Germany; 4,28 ; 6 ; 2 
+61;DK01;Hovedstaden;Denmark; 3,62 ; 10 ; 2 
+62;DK02;Sjælland;Denmark; 2,73 ; 6 ; 2 
+63;DK03;Southern Denmark;Denmark; 4,40 ; 6 ; 2 
+64;DK04;Midtjylland;Denmark; 4,90 ; 10 ; 2 
+65;DK05;Nordjylland;Denmark; 5,38 ; 10 ; 3 
+66;ES11;Galicia;Spain; 7,01 ; 8 ; 6 
+67;ES12;Principado de Asturias;Spain; 7,35 ; 9 ; 4 
+68;ES13;Cantabria;Spain; 6,64 ; 9 ; 2 
+69;ES21;País Vasco;Spain; 5,17 ; 7 ; 2 
+70;ES22;Comunidad Foral de Navarra;Spain; 4,88 ; 8 ; 2 
+71;ES23;La Rioja;Spain; 5,10 ; 8 ; 2 
+72;ES24;Aragón;Spain; 5,26 ; 9 ; 2 
+73;ES30;Comunidad de Madrid;Spain; 5,47 ; 8 ; 3 
+74;ES41;Castilla y León;Spain; 5,56 ; 8 ; 2 
+75;ES42;Castilla-La Mancha;Spain; 5,20 ; 7 ; 2 
+76;ES43;Extremadura;Spain; 5,39 ; 8 ; 3 
+77;ES51;Cataluña;Spain; 5,94 ; 9 ; 3 
+78;ES52;Comunidad Valenciana;Spain; 5,83 ; 7 ; 3 
+79;ES53;Illes Balears;Spain; 5,80 ; 7 ; 4 
+80;ES61;Andalucía;Spain; 5,37 ; 10 ; 3 
+81;ES62;Región de Murcia;Spain; 5,90 ; 7 ; 4 
+82;ES70;Canarias;Spain; 6,77 ; 9 ; 4 
+83;FI19;Länsi-Suomi;Finland; 6,37 ; 10 ; 5 
+84;FI1B;Helsinki-Uusimaa;Finland; 6,10 ; 7 ; 5 
+85;FI1C;Etelä-Soumi;Finland; 6,19 ; 10 ; 5 
+86;FI1D;Pohjois-ja Itä-Soumi;Finland; 7,50 ; 10 ; 5 
+87;FI20;Åland;Finland; 7,00 ; 7 ; 7 
+88;FR10;Île de France;France; 4,28 ; 9 ; 2 
+89;FR21;Champagne-Ardenne;France; 4,19 ; 7 ; 2 
+90;FR22;Picardie;France; 3,93 ; 7 ; 2 
+91;FR23;Haute-Normandie;France; 4,00 ; 7 ; 2 
+92;FR24;Centre;France; 3,68 ; 6 ; 2 
+93;FR25;Basse-Normandie;France; 3,80 ; 7 ; 2 
+94;FR26;Bourgogne;France; 3,50 ; 7 ; 2 
+95;FR30;Nord - Pas-de-Calais;France; 4,20 ; 7 ; 2 
+96;FR41;Lorraine;France; 3,71 ; 7 ; 2 
+97;FR42;Alsace;France; 4,48 ; 7 ; 2 
+98;FR43;Franche-Comté;France; 3,65 ; 7 ; 2 
+99;FR51;Pays de la Loire;France; 4,17 ; 8 ; 2 
+100;FR52;Bretagne;France; 3,52 ; 7 ; 2 
+101;FR53;Poitou-Charentes;France; 3,92 ; 7 ; 2 
+102;FR61;Aquitaine;France; 4,75 ; 10 ; 2 
+103;FR62;Midi-Pyrénées;France; 4,51 ; 9 ; 2 
+104;FR63;Limousin;France; 4,58 ; 6 ; 3 
+105;FR71;Rhône-Alpes;France; 5,34 ; 10 ; 2 
+106;FR72;Auvergne;France; 4,37 ; 7 ; 2 
+107;FR81;Languedoc-Roussillon;France; 5,35 ; 9 ; 2 
+108;FR82;Provence-Alpes-Côte d'Azur;France; 5,39 ; 10 ; 2 
+109;FR83;Corse;France; 5,77 ; 8 ; 2 
+110;IE0;Ireland;IRELAND; 5,60 ; 10 ; 3 
+111;ITC1;Piemonte;Italy; 5,76 ; 10 ; 2 
+112;ITC2;Valle dAosta/Vallée dAoste;Italy; 8,53 ; 9 ; 7 
+113;ITC3;Liguria;Italy; 6,70 ; 8 ; 5 
+114;ITC4;Lombardia;Italy; 5,28 ; 10 ; 2 
+115;ITF1;Abruzzo;Italy; 6,00 ; 9 ; 2 
+116;ITF2;Molise;Italy; 6,32 ; 7 ; 4 
+117;ITF3;Campania;Italy; 6,10 ; 8 ; 3 
+118;ITF4;Puglia;Italy; 4,87 ; 10 ; 2 
+119;ITF5;Basilicata;Italy; 5,80 ; 7 ; 3 
+120;ITF6;Calabria;Italy; 5,75 ; 7 ; 3 
+121;ITG1;Sicilia;Italy; 5,35 ; 9 ; 3 
+122;ITG2;Sardegna;Italy; 6,12 ; 8 ; 3 
+123;ITH1+ITH2;Provincia Autonoma di Bolzano/Bozen-Provincia Autonoma di Trento;Italy; 8,38 ; 9 ; 5 
+124;ITH3;Veneto;Italy; 5,19 ; 10 ; 2 
+125;ITH4;Friuli-Venezia Giulia;Italy; 5,94 ; 9 ; 2 
+126;ITH5;Emilia-Romagna;Italy; 4,73 ; 10 ; 2 
+127;ITI1;Toscana;Italy; 5,24 ; 8 ; 2 
+128;ITI2;Umbria;Italy; 5,64 ; 10 ; 3 
+129;ITI3;Marche;Italy; 5,58 ; 8 ; 4 
+130;ITI4;Lazio;Italy; 5,89 ; 10 ; 2 
+131;LU00;Luxembourg (state);LUXEMBOURG; 4,92 ; 7 ; 4 
+132;NL11;Groningen;Netherlands; 5,94 ; 6 ; 5 
+133;NL12;Friesland;Netherlands; 5,84 ; 9 ; 5 
+134;NL13;Drenthe;Netherlands; 5,96 ; 6 ; 5 
+135;NL21;Overijssel;Netherlands; 5,69 ; 7 ; 5 
+136;NL22;Gelderland;Netherlands; 5,13 ; 6 ; 4 
+137;NL23;Flevoland (1960 - );Netherlands; 5,20 ; 6 ; 5 
+138;NL31;Utrecht;Netherlands; 5,33 ; 6 ; 4 
+139;NL32;Noordholland;Netherlands; 5,77 ; 9 ; 4 
+140;NL33;Zuidholland;Netherlands; 5,53 ; 7 ; 5 
+141;NL34;Zeeland;Netherlands; 5,03 ; 6 ; 5 
+142;NL41;Noordbrabant;Netherlands; 5,52 ; 6 ; 4 
+143;NL42;Limburg;Netherlands; 4,79 ; 6 ; 3 
+144;NO01;Oslo og Akershus;Norway; 6,49 ; 10 ; 5 
+145;NO02;Hedmark og Oppland;Norway; 8,51 ; 10 ; 3 
+146;NO03;Sør-Østlandet;Norway; 7,81 ; 10 ; 5 
+147;NO04;Agder og Rogaland;Norway; 7,55 ; 9 ; 6 
+148;NO05;Vestlandet;Norway; 8,64 ; 9 ; 6 
+149;NO06;Trøndelag;Norway; 8,84 ; 10 ; 6 
+150;NO07;Nord-Norge;Norway; 9,00 ; 10 ; 7 
+151;PT11;Norte;Portugal; 6,73 ; 8 ; 5 
+152;PT15;Algarve;Portugal; 4,94 ; 7 ; 3 
+153;PT16;Centro;Portugal; 6,06 ; 8 ; 3 
+154;PT17;Lisboa;Portugal; 5,36 ; 7 ; 4 
+155;PT18;Alentejo;Portugal; 5,32 ; 10 ; 3 
+156;SE11;Stockholm;Sweden; 5,54 ; 10 ; 5 
+157;SE12;Östra Mellansverige;Sweden; 5,84 ; 10 ; 3 
+158;SE21;Småland med öarna;Sweden; 5,72 ; 10 ; 3 
+159;SE22;Sydsverige;Sweden; 3,95 ; 6 ; 2 
+160;SE23;Västsverige;Sweden; 6,03 ; 10 ; 5 
+161;SE31;Norra Mellansverige;Sweden; 7,24 ; 10 ; 5 
+162;SE32;Mellersta Norrland;Sweden; 8,51 ; 10 ; 6 
+163;SE33;Övre Norrland;Sweden; 8,57 ; 10 ; 6 
+164;UKC+UKD;North;United Kingdom; 5,85 ; 9 ; 4 
+165;UKE;Yorks  & Humberside;United Kingdom; 5,61 ; 8 ; 3 
+166;UKF;East  Midlands;United Kingdom; 5,49 ; 8 ; 3 
+167;UKG;West Midlands;United Kingdom; 5,29 ; 9 ; 3 
+168;UKH+UKJ;Rest of SouthEast;United Kingdom; 4,73 ; 8 ; 2 
+169;UKI;London Counties;United Kingdom; 8,04 ; 9 ; 6 
+170;UKK;SouthWest;United Kingdom; 5,48 ; 8 ; 3 
+171;UKL;Wales;United Kingdom; 6,19 ; 9 ; 4 
+172;UKM;Scotland;United Kingdom; 6,99 ; 9 ; 2 
+173;UKN;Northern Ireland;United Kingdom; 5,91 ; 10 ; 4 

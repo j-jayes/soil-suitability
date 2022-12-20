@@ -2,7 +2,7 @@
 title: "Readme"
 format: gfm
 execute: 
-  echo: false
+  echo: true
   message: false
   warning: false
 ---
@@ -11,38 +11,13 @@ execute:
 
 Collect soil quality data and aggregate up to NUTS2 level.
 
-What do we want the output to look like?
+## Download data
 
-We want a dataframe with the NUTS2 region codes and the average suitability index for each polygon.
-
-We won't export the polygons themselves.
+You can download the data in excel format at [this link]()
 
 ## Context
 
 Kerstin asked if I could get the soil quality data to supplement the dataset in her course.
-
-### Template
-
-We will use the same variables as have been used in the economics literature. 
-
-Here we borrow from 
-
-<blockquote>
-
-High-resolution data on soil suitability are available from the Food and Agriculture Organization Global Agro-Ecological Zones project (FAO-GAEZ). The FAO-GAEZ data are constructed to measure soil suitability for rain-fed crops assuming the absence of irrigation. This feature make these sort of data particularly suited for the historical analysis of pre-industrial societies. The FAO-GAEZ database include a variety of measures of soil suitability. Since I separately control for mean climatic conditions in the regressions, I employ a measure that captures all those soil characteristics that affect land suitability for rain-fed crops, abstracting from average local climate. The data are in grid format, have very high resolution (1’), and assign to each grid cell a score from 0 (totally unsuitable), to 7 (very suitable). As regional measures of average land quality and variability in land quality I use the mean and the standard deviation of the suitability index over all cells in a region.
-
-Terrain ruggedness can have both direct and indirect effects on patterns of human interaction and on economic outcomes (Nunn et al., 2009). To some extent, ruggedness and elevation can also be expected to be correlated with climate variability, especially with regard to its spatial dimension. The presence of a mountain can cause very different microecosystems to manifest over relatively small distances; as a consequence, climatic realization on the one side of the mountain can be very different from those of the other side. To control for the relationship between climate variability and topography, I include a regional measure of terrain ruggedness in my regressions constructed from the Global Land One-km Base Elevation Project (GLOBE), a global gridded digital elevation data set covering the Earth’s surface at a 10-minute spatial resolution (approximately 1km).
-
-</blockquote>
-
-
-Nunn and Qian:
-
-<blockquote>
-
-The construction of the FAO’s GAEZ database occurred in two stages. The FAO first collected information on the characteristics of 154 different crops. These data were used to determine what environmental conditions are required for the cultivation of each crop. The FAO then compiled data on the physical environment of 2.2 million grid cells, spanning the entire globe. Each cell is 0.5 degrees by 0.5 degrees, which is approximately fifty-six kilometres by fifty-six kilometres (measured at the equator). The primary characteristics used are climatic and are taken from a global climatic database that has been compiled by the Climate Research Unit at the University of East Anglia. In total, nine variables from the global climatic database are used by the FAO: precipitation, frequency of wet days, mean temperature, diurnal (i.e., daily) temperature range, vapor pressure, cloud cover, sunshine, ground-frost frequency, and wind speed. The second set of characteristics are land characteristics and are taken from the FAO’s Digital Soil Map of the World. The final characteristicis the slope of soils, which is from the GTOPO30 Database, developed at the U.S. Geological Survey (USGS) EROS Data Center
-
-</blockquote>
 
 ### Data
 
@@ -50,6 +25,7 @@ Data on wheat suitability from FAO-GAEZ 4, available at the [following link](htt
 
 ```{r}
 library(tidyverse)
+theme_set(theme_light())
 library(gt)
 
 tribble(
@@ -64,7 +40,8 @@ tribble(
   "Input level", "Low"
 ) %>% 
   gt::gt() %>% 
-  tab_header(title = "FAO-GAEZ 4 metadata")
+  tab_header(title = "FAO-GAEZ 4 metadata") %>% 
+  as_raw_html(inline_css = FALSE)
 ```
 
 It is in a raster format - where the earth is broken into tiles.
@@ -132,13 +109,16 @@ map_simple <- map_simple %>%
   st_transform(crs = 4326)
 ```
 
+We want to crop to only Europe:
+
 ```{r}
-tif_bbox <- st_crop(tif, map_simple %>% st_bbox() %>% st_buffer(dist = 1000000))
+tif_bbox <- st_crop(tif, map_simple %>% st_bbox())
 
 ggplot() +
   geom_stars(data = tif_bbox)
 ```
 
+Now we want to calculate the averages within each polygon, along with the min and max values within each polygon.
 
 ```{r}
 # devtools::install_github("michaeldorman/geobgu")
@@ -150,12 +130,74 @@ map_simple_avgs <-
     suitability_class_max = raster_extract(tif_bbox, map_simple, fun = max, na.rm = TRUE),
     suitability_class_min = raster_extract(tif_bbox, map_simple, fun = min, na.rm = TRUE)
   )
+```
 
-map_simple_avgs %>% ggplot() + geom_sf(aes(fill = hfpMean))
+This is what the averaging procedure produces:
 
+```{r}
+map_simple_avgs %>% ggplot() +
+  geom_sf(aes(fill = suitability_class_mean)) +
+  scale_fill_viridis_c() +
+  coord_sf() +
+  labs(fill = "Soil suitability\nfor rainfed wheat\n(mean of class,\nlower is better)")
+```
+
+The distribution of minimum and maximum values is quite erratic. The plot below arranges the NUTS2 regions from lowest mean of suitability class to largest. The ribbon shows the 
+
+```{r}
 map_simple_avgs %>%
   st_set_geometry(NULL) %>%
+  mutate(nuts_code = fct_reorder(nuts_code, suitability_class_mean)) %>%
+  ggplot(aes(
+    x = nuts_code, y = suitability_class_mean,
+    ymin = suitability_class_min,
+    ymax = suitability_class_max,
+    group = 1
+  )) +
+  geom_line() +
+  geom_ribbon(alpha = .3) +
+  labs(
+    x = "NUTS code",
+    y = "Soil suitability index"
+  )
+```
+
+Here is an example of 10 random regions.
+
+```{r}
+map_simple_avgs %>%
+  slice_sample(n = 10) %>% 
+  st_set_geometry(NULL) %>%
   knitr::kable()
+```
+
+### Join to Roses Wolf database
+
+  "AT12+AT13", "AT123",
+  "DE71+DE72", "DE712",
+  "DE91+DE92", "DE912"
+
+```{r}
+df <- haven::read_dta(here::here("data", "RosesWolf_Regional_Fahad.dta"))
+
+df <- df %>%
+  distinct(id, nuts, region, country)
+
+map_simple_avgs <- map_simple_avgs %>%
+  st_set_geometry(NULL) %>%
+  mutate(nuts = case_when(
+    nuts_code == "AT123" ~ "AT12+AT13",
+    nuts_code == "DE712" ~ "DE71+DE72",
+    nuts_code == "DE912" ~ "DE91+DE92",
+    TRUE ~ nuts_code
+  ))
+
+df_out <- df %>%
+  left_join(map_simple_avgs) %>%
+  select(-nuts_code)
+
+# df_out %>% 
+#   write.csv(here::here("data", "soil_suitability.csv"))
 ```
 
 
