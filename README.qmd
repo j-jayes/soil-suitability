@@ -9,25 +9,44 @@ execute:
 
 ## Purpose
 
-Collect soil quality data and aggregate up to NUTS2 level.
+Collect soil quality data and aggregate up to NUTS2 level to join to Rosés-Wolf database on regional GDP
 
 ## Download data
 
-You can download the data in excel format at [this link]()
+You can download the data in excel format at [this link](data/soil_suitability.xlsx)
 
-## Context
+It looks like this:
 
-Kerstin asked if I could get the soil quality data to supplement the dataset in her course.
+```{r}
+#| echo: false
+library(tidyverse)
+library(gt)
+theme_set(theme_light())
+
+
+df_out <- read_rds(here::here("data", "soil_suitability.rds"))
+
+df_out %>% 
+  slice_head(n = 10) %>% 
+  gt() %>% 
+  tab_header(title = "Extract of soil quality data") %>% 
+  as_raw_html(inline_css = FALSE)
+```
 
 ### Data
 
 Data on wheat suitability from FAO-GAEZ 4, available at the [following link](https://gaez-data-portal-hqfao.hub.arcgis.com/pages/data-viewer).
 
-```{r}
-library(tidyverse)
-theme_set(theme_light())
-library(gt)
+The data viewer presents the data like so:
 
+```{r}
+knitr::include_graphics("images/fao_interface.PNG")
+```
+
+The specific extract information is:
+
+```{r}
+#| echo: false
 tribble(
   ~Field, ~Value,
   "Theme", "Suitability and Attainable Yield",
@@ -46,7 +65,7 @@ tribble(
 
 It is in a raster format - where the earth is broken into tiles.
 
-This is what it looks like:
+This is what it looks like on a map:
 
 ```{r}
 library(stars)
@@ -57,7 +76,7 @@ ggplot() +
   geom_stars(data = tif)
 ```
 
-We want to aggregate this to the nuts2 levels used in the roses wolf database.
+We want to aggregate this to the nuts2 levels used in the Rosés-Wolf database on regional GDP.
 
 ### NUTS2 shapefile
 
@@ -65,11 +84,13 @@ The NUTS2 shapefiles are from [Eurostat](https://ec.europa.eu/eurostat/web/gisco
 
 We're going to work in WGS84 for convenience (EPSG: 4326).
 
-We now need to aggregate up the NUTS2 regions which are joined together in the Roses Wolf database.
+We now need to aggregate up the NUTS2 regions which are joined together in the Rosés-Wolf database on regional GDP.
 
 They are:
 
 ```{r}
+#| echo: false
+
 tribble(
   ~NUTS2_regions, ~Aggregation,
   "AT12+AT13", "AT123",
@@ -80,6 +101,7 @@ tribble(
   tab_header(title = "Aggregations of NUTS2 regions")
 ```
 
+The following chunk manipulates the shapefile to make it easier to work with in a WGS84 projection.
 
 ```{r}
 library(sf)
@@ -109,9 +131,10 @@ map_simple <- map_simple %>%
   st_transform(crs = 4326)
 ```
 
-We want to crop to only Europe:
+We want to crop to only Europe: this is what the raster file looks like now.
 
 ```{r}
+# st_crop removes the raster region outside of europe
 tif_bbox <- st_crop(tif, map_simple %>% st_bbox())
 
 ggplot() +
@@ -135,6 +158,8 @@ map_simple_avgs <-
 This is what the averaging procedure produces:
 
 ```{r}
+#| echo: false
+
 map_simple_avgs %>% ggplot() +
   geom_sf(aes(fill = suitability_class_mean)) +
   scale_fill_viridis_c() +
@@ -145,6 +170,8 @@ map_simple_avgs %>% ggplot() +
 The distribution of minimum and maximum values is quite erratic. The plot below arranges the NUTS2 regions from lowest mean of suitability class to largest. The ribbon shows the 
 
 ```{r}
+#| echo: false
+
 map_simple_avgs %>%
   st_set_geometry(NULL) %>%
   mutate(nuts_code = fct_reorder(nuts_code, suitability_class_mean)) %>%
@@ -165,24 +192,24 @@ map_simple_avgs %>%
 Here is an example of 10 random regions.
 
 ```{r}
+#| echo: false
 map_simple_avgs %>%
   slice_sample(n = 10) %>% 
   st_set_geometry(NULL) %>%
   knitr::kable()
 ```
 
-### Join to Roses Wolf database
-
-  "AT12+AT13", "AT123",
-  "DE71+DE72", "DE712",
-  "DE91+DE92", "DE912"
+### Join to Rosés-Wolf database on regional GDP
 
 ```{r}
+# read in data file
 df <- haven::read_dta(here::here("data", "RosesWolf_Regional_Fahad.dta"))
 
+# keep unique nuts codes
 df <- df %>%
   distinct(id, nuts, region, country)
 
+# change label of joined regions
 map_simple_avgs <- map_simple_avgs %>%
   st_set_geometry(NULL) %>%
   mutate(nuts = case_when(
@@ -192,9 +219,13 @@ map_simple_avgs <- map_simple_avgs %>%
     TRUE ~ nuts_code
   ))
 
+# join together
 df_out <- df %>%
   left_join(map_simple_avgs) %>%
   select(-nuts_code)
+
+# df_out %>% 
+#   write_rds(here::here("data", "soil_suitability.rds"))
 
 # df_out %>% 
 #   write.csv(here::here("data", "soil_suitability.csv"))
