@@ -34,7 +34,7 @@ df_out %>%
   slice_head(n = 10) %>% 
   gt() %>% 
   tab_header(title = "Extract of soil quality data") %>% 
-  as_raw_html(inline_css = FALSE)
+  as_raw_html(inline_css = TRUE)
 ```
 
 ### Data
@@ -102,7 +102,8 @@ tribble(
   "DE91+DE92", "DE912"
 ) %>%
   gt() %>%
-  tab_header(title = "Aggregations of NUTS2 regions")
+  tab_header(title = "Aggregations of NUTS2 regions") %>% 
+  as_raw_html(inline_css = TRUE)
 ```
 
 The following chunk manipulates the shapefile to make it easier to work with in a WGS84 projection.
@@ -255,7 +256,8 @@ tribble(
   "DE91+DE92", "DE912"
 ) %>%
   gt() %>%
-  tab_header(title = "Aggregations of NUTS2 regions")
+  tab_header(title = "Aggregations of NUTS2 regions") %>% 
+  as_raw_html(inline_css = TRUE)
 ```
 
 The following chunk manipulates the shapefile to make it easier to work with in a WGS84 projection.
@@ -364,6 +366,8 @@ map_simple_avgs %>%
 ```
 
 ```{r}
+#| eval: false
+
 map_simple_avgs %>%
   as_tibble() %>% 
   select(-geometry) %>% 
