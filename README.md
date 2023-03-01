@@ -5,22 +5,60 @@ Readme
 
 Collect soil quality data and aggregate up to NUTS2 level to join to
 Rosés-Wolf database on regional GDP. We do this both for NUTS2 and NUTS3
-(for Sweden and Spain).
+(and for Sweden and Spain separately).
 
 ## Download data
 
-You can download the NUTS2 data in excel format at [this
-link](data/soil_suitability.xlsx)
+<div id="yxkajioghq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+  
+  <table class="gt_table" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif; display: table; border-collapse: collapse; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;" bgcolor="#FFFFFF">
+  <thead class="gt_header">
+    <tr>
+      <td colspan="3" class="gt_heading gt_title gt_font_normal gt_bottom_border" style="background-color: #FFFFFF; text-align: center; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; color: #333333; font-size: 125%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; font-weight: normal;" bgcolor="#FFFFFF" align="center"><strong>Download data</strong></td>
+    </tr>
+    
+  </thead>
+  
+  <tbody class="gt_table_body" style="border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3;">
+    <tr><td headers="link" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left"><a href="data/soil_suitability.xlsx">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Europe_orthographic_Caucasus_Urals_boundary_%28with_borders%29.svg/1200px-Europe_orthographic_Caucasus_Urals_boundary_%28with_borders%29.svg.png" width="80" height="80">
+             </a></td>
+<td headers="link_text" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left"><a href="data/soil_suitability.xlsx">
+NUTS2 Europe
+             </a></td>
+<td headers="format" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">xls</td></tr>
+    <tr><td headers="link" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left"><a href="data/soil_suitability_nuts_3.csv">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Europe_orthographic_Caucasus_Urals_boundary_%28with_borders%29.svg/1200px-Europe_orthographic_Caucasus_Urals_boundary_%28with_borders%29.svg.png" width="80" height="80">
+             </a></td>
+<td headers="link_text" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left"><a href="data/soil_suitability_nuts_3.csv">
+NUTS3 Europe
+             </a></td>
+<td headers="format" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">csv</td></tr>
+    <tr><td headers="link" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left"><a href="data/soil_suitability_nuts_3_ES.csv">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Bandera_de_Espa%C3%B1a.svg/1920px-Bandera_de_Espa%C3%B1a.svg.png" width="80" height="80">
+             </a></td>
+<td headers="link_text" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left"><a href="data/soil_suitability_nuts_3_ES.csv">
+NUTS3 Spain
+             </a></td>
+<td headers="format" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">csv</td></tr>
+    <tr><td headers="link" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left"><a href="data/soil_suitability_nuts_3_SE.csv">
+<img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Flag_of_Sweden.svg/1920px-Flag_of_Sweden.svg.png" width="80" height="80">
+             </a></td>
+<td headers="link_text" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left"><a href="data/soil_suitability_nuts_3_SE.csv">
+NUTS3 Sweden
+             </a></td>
+<td headers="format" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">csv</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
 
-You can download the NUTS3 data in excel format at [this
-link](data/soil_suitability_nuts_3.csv)
-
-You can download the NUTS3 data for Spain and Sweden in excel format at
-[this link](data/soil_suitability_nuts_3_SE_ES.csv)
+## What does the data look like?
 
 It looks like this:
 
-<div id="ajytmlvtds" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="atiykfhila" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
   
   <table class="gt_table" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif; display: table; border-collapse: collapse; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;" bgcolor="#FFFFFF">
   <thead class="gt_header">
@@ -132,447 +170,38 @@ knitr::include_graphics("images/fao_interface.PNG")
 
 The specific extract information is:
 
-<div id="fdcmdrmdws" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-  <style>html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
-}
-
-#fdcmdrmdws .gt_table {
-  display: table;
-  border-collapse: collapse;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#fdcmdrmdws .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#fdcmdrmdws .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#fdcmdrmdws .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#fdcmdrmdws .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 0;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#fdcmdrmdws .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#fdcmdrmdws .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#fdcmdrmdws .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#fdcmdrmdws .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#fdcmdrmdws .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#fdcmdrmdws .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#fdcmdrmdws .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#fdcmdrmdws .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#fdcmdrmdws .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#fdcmdrmdws .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#fdcmdrmdws .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#fdcmdrmdws .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#fdcmdrmdws .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#fdcmdrmdws .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#fdcmdrmdws .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#fdcmdrmdws .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#fdcmdrmdws .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#fdcmdrmdws .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#fdcmdrmdws .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#fdcmdrmdws .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#fdcmdrmdws .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#fdcmdrmdws .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#fdcmdrmdws .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#fdcmdrmdws .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#fdcmdrmdws .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-left: 4px;
-  padding-right: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#fdcmdrmdws .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#fdcmdrmdws .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#fdcmdrmdws .gt_left {
-  text-align: left;
-}
-
-#fdcmdrmdws .gt_center {
-  text-align: center;
-}
-
-#fdcmdrmdws .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#fdcmdrmdws .gt_font_normal {
-  font-weight: normal;
-}
-
-#fdcmdrmdws .gt_font_bold {
-  font-weight: bold;
-}
-
-#fdcmdrmdws .gt_font_italic {
-  font-style: italic;
-}
-
-#fdcmdrmdws .gt_super {
-  font-size: 65%;
-}
-
-#fdcmdrmdws .gt_footnote_marks {
-  font-style: italic;
-  font-weight: normal;
-  font-size: 75%;
-  vertical-align: 0.4em;
-}
-
-#fdcmdrmdws .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#fdcmdrmdws .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#fdcmdrmdws .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#fdcmdrmdws .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#fdcmdrmdws .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#fdcmdrmdws .gt_indent_5 {
-  text-indent: 25px;
-}
-</style>
-  <table class="gt_table">
+<div id="tuotjlrexk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+  
+  <table class="gt_table" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif; display: table; border-collapse: collapse; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;" bgcolor="#FFFFFF">
   <thead class="gt_header">
     <tr>
-      <td colspan="2" class="gt_heading gt_title gt_font_normal gt_bottom_border" style>FAO-GAEZ 4 metadata</td>
+      <td colspan="2" class="gt_heading gt_title gt_font_normal gt_bottom_border" style="background-color: #FFFFFF; text-align: center; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; color: #333333; font-size: 125%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; font-weight: normal;" bgcolor="#FFFFFF" align="center">FAO-GAEZ 4 metadata</td>
     </tr>
     
   </thead>
-  <thead class="gt_col_headings">
+  <thead class="gt_col_headings" style="border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3;">
     <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Field">Field</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Value">Value</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Field" style="color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: left;" bgcolor="#FFFFFF" valign="bottom" align="left">Field</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Value" style="color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: left;" bgcolor="#FFFFFF" valign="bottom" align="left">Value</th>
     </tr>
   </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="Field" class="gt_row gt_left">Theme</td>
-<td headers="Value" class="gt_row gt_left">Suitability and Attainable Yield</td></tr>
-    <tr><td headers="Field" class="gt_row gt_left">Sub-theme</td>
-<td headers="Value" class="gt_row gt_left">Suitability Class</td></tr>
-    <tr><td headers="Field" class="gt_row gt_left">Variable name</td>
-<td headers="Value" class="gt_row gt_left">Crop suitability index in classes</td></tr>
-    <tr><td headers="Field" class="gt_row gt_left">Time period</td>
-<td headers="Value" class="gt_row gt_left">1981-2010</td></tr>
-    <tr><td headers="Field" class="gt_row gt_left">Climate data source</td>
-<td headers="Value" class="gt_row gt_left">CRUTS32</td></tr>
-    <tr><td headers="Field" class="gt_row gt_left">Crop</td>
-<td headers="Value" class="gt_row gt_left">Wheat</td></tr>
-    <tr><td headers="Field" class="gt_row gt_left">Water supply</td>
-<td headers="Value" class="gt_row gt_left">Rainfed</td></tr>
-    <tr><td headers="Field" class="gt_row gt_left">Input level</td>
-<td headers="Value" class="gt_row gt_left">Low</td></tr>
+  <tbody class="gt_table_body" style="border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3;">
+    <tr><td headers="Field" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Theme</td>
+<td headers="Value" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Suitability and Attainable Yield</td></tr>
+    <tr><td headers="Field" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Sub-theme</td>
+<td headers="Value" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Suitability Class</td></tr>
+    <tr><td headers="Field" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Variable name</td>
+<td headers="Value" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Crop suitability index in classes</td></tr>
+    <tr><td headers="Field" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Time period</td>
+<td headers="Value" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">1981-2010</td></tr>
+    <tr><td headers="Field" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Climate data source</td>
+<td headers="Value" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">CRUTS32</td></tr>
+    <tr><td headers="Field" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Crop</td>
+<td headers="Value" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Wheat</td></tr>
+    <tr><td headers="Field" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Water supply</td>
+<td headers="Value" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Rainfed</td></tr>
+    <tr><td headers="Field" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Input level</td>
+<td headers="Value" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Low</td></tr>
   </tbody>
   
   
@@ -592,7 +221,7 @@ ggplot() +
   geom_stars(data = tif)
 ```
 
-![](README_files/figure-commonmark/unnamed-chunk-4-1.png)
+![](README_files/figure-commonmark/unnamed-chunk-5-1.png)
 
 We want to aggregate this to the nuts2 levels used in the Rosés-Wolf
 database on regional GDP.
@@ -609,7 +238,7 @@ in the Rosés-Wolf database on regional GDP.
 
 They are:
 
-<div id="xjrnurcosf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="eoucqcvsjs" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
   
   <table class="gt_table" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif; display: table; border-collapse: collapse; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;" bgcolor="#FFFFFF">
   <thead class="gt_header">
@@ -679,7 +308,7 @@ ggplot() +
   geom_stars(data = tif_bbox)
 ```
 
-![](README_files/figure-commonmark/unnamed-chunk-7-1.png)
+![](README_files/figure-commonmark/unnamed-chunk-8-1.png)
 
 Now we want to calculate the averages within each polygon, along with
 the min and max values within each polygon.
@@ -698,28 +327,28 @@ map_simple_avgs <-
 
 This is what the averaging procedure produces:
 
-![](README_files/figure-commonmark/unnamed-chunk-9-1.png)
+![](README_files/figure-commonmark/unnamed-chunk-10-1.png)
 
 The distribution of minimum and maximum values is quite erratic. The
 plot below arranges the NUTS2 regions from lowest mean of suitability
 class to largest. The ribbon shows the
 
-![](README_files/figure-commonmark/unnamed-chunk-10-1.png)
+![](README_files/figure-commonmark/unnamed-chunk-11-1.png)
 
 Here is an example of 10 random regions.
 
 | nuts_code | suitability_class_mean | suitability_class_max | suitability_class_min |
 |:----------|-----------------------:|----------------------:|----------------------:|
-| BG31      |               3.480392 |                     7 |                     2 |
-| ES52      |               5.834758 |                     7 |                     3 |
-| DK03      |               4.402490 |                     6 |                     2 |
-| BG32      |               2.840336 |                     6 |                     2 |
-| TRC2      |               3.960474 |                    10 |                     2 |
-| DE50      |               5.857143 |                     7 |                     5 |
-| DE23      |               4.765714 |                     6 |                     2 |
-| UKI       |               8.035714 |                     9 |                     6 |
-| UKC+UKD   |               5.845987 |                     9 |                     4 |
-| FR72      |               4.370115 |                     7 |                     2 |
+| RO31      |               3.689165 |                     9 |                     2 |
+| NL41      |               5.515789 |                     6 |                     4 |
+| NL21      |               5.687500 |                     7 |                     5 |
+| PL51      |               4.417344 |                     8 |                     2 |
+| ITF2      |               6.318841 |                     7 |                     4 |
+| FR62      |               4.510094 |                     9 |                     2 |
+| NL33      |               5.532258 |                     7 |                     5 |
+| NO07      |               9.001366 |                    10 |                     7 |
+| EL24      |               6.030973 |                     8 |                     4 |
+| AN        |               8.500000 |                     9 |                     8 |
 
 ### Join to Rosés-Wolf database on regional GDP
 
@@ -765,7 +394,7 @@ in the Rosés-Wolf database on regional GDP for Sweden and Spain.
 
 They are:
 
-<div id="whpyiwkqgt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="klfuonbrek" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
   
   <table class="gt_table" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif; display: table; border-collapse: collapse; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;" bgcolor="#FFFFFF">
   <thead class="gt_header">
@@ -809,7 +438,7 @@ map_tbl %>%
   coord_sf()
 ```
 
-![](README_files/figure-commonmark/unnamed-chunk-14-1.png)
+![](README_files/figure-commonmark/unnamed-chunk-15-1.png)
 
 ``` r
 # Making the map files smaller
@@ -840,7 +469,7 @@ ggplot() +
   geom_stars(data = tif_bbox)
 ```
 
-![](README_files/figure-commonmark/unnamed-chunk-15-1.png)
+![](README_files/figure-commonmark/unnamed-chunk-16-1.png)
 
 Now we want to calculate the averages within each polygon, along with
 the min and max values within each polygon.
@@ -864,28 +493,28 @@ map_simple_avgs <- map_simple %>%
 
 This is what the averaging procedure produces:
 
-![](README_files/figure-commonmark/unnamed-chunk-17-1.png)
+![](README_files/figure-commonmark/unnamed-chunk-18-1.png)
 
 The distribution of minimum and maximum values is quite erratic. The
 plot below arranges the NUTS2 regions from lowest mean of suitability
 class to largest. The ribbon shows the
 
-![](README_files/figure-commonmark/unnamed-chunk-18-1.png)
+![](README_files/figure-commonmark/unnamed-chunk-19-1.png)
 
 Here is an example of 10 random regions.
 
-| nuts_id | levl_code | cntr_code | name_latn                                         | nuts_name                                         | mount_type | urbn_type | coast_type | fid   | suitability_class_mean | suitability_class_max | suitability_class_min |
-|:--------|----------:|:----------|:--------------------------------------------------|:--------------------------------------------------|-----------:|----------:|-----------:|:------|-----------------------:|----------------------:|----------------------:|
-| PL926   |         3 | PL        | Żyrardowski                                       | Żyrardowski                                       |          4 |         3 |          3 | PL926 |               4.326531 |                     6 |                     3 |
-| NL342   |         3 | NL        | Overig Zeeland                                    | Overig Zeeland                                    |          4 |         2 |          1 | NL342 |               5.050000 |                     6 |                     5 |
-| UKJ12   |         3 | UK        | Milton Keynes                                     | Milton Keynes                                     |          4 |         1 |          3 | UKJ12 |               4.000000 |                     4 |                     4 |
-| BE100   |         3 | BE        | Arr. de Bruxelles-Capitale/Arr. Brussel-Hoofdstad | Arr. de Bruxelles-Capitale/Arr. Brussel-Hoofdstad |          4 |         1 |          3 | BE100 |               5.250000 |                     6 |                     4 |
-| DEB34   |         3 | DE        | Ludwigshafen am Rhein, Kreisfreie Stadt           | Ludwigshafen am Rhein, Kreisfreie Stadt           |          4 |         1 |          3 | DEB34 |               5.000000 |                     6 |                     4 |
-| UKN0D   |         3 | UK        | Antrim and Newtownabbey                           | Antrim and Newtownabbey                           |          4 |         2 |          1 | UKN0D |               6.266667 |                    10 |                     4 |
-| DE215   |         3 | DE        | Berchtesgadener Land                              | Berchtesgadener Land                              |          3 |         2 |          3 | DE215 |               6.105263 |                     9 |                     2 |
-| ITC15   |         3 | IT        | Novara                                            | Novara                                            |          4 |         2 |          3 | ITC15 |               3.714286 |                     6 |                     3 |
-| NL328   |         3 | NL        | Alkmaar en omgeving                               | Alkmaar en omgeving                               |          4 |         1 |          1 | NL328 |               5.285714 |                     6 |                     4 |
-| RO211   |         3 | RO        | Bacău                                             | Bacău                                             |          2 |         3 |          3 | RO211 |               3.517857 |                     7 |                     2 |
+| nuts_id | levl_code | cntr_code | name_latn            | nuts_name            | mount_type | urbn_type | coast_type | fid   | suitability_class_mean | suitability_class_max | suitability_class_min |
+|:--------|----------:|:----------|:---------------------|:---------------------|-----------:|----------:|-----------:|:------|-----------------------:|----------------------:|----------------------:|
+| DE735   |         3 | DE        | Schwalm-Eder-Kreis   | Schwalm-Eder-Kreis   |          4 |         3 |          3 | DE735 |               3.933333 |                     5 |                     2 |
+| EL307   |         3 | EL        | Peiraias, Nisoi      | Πειραιάς, Νήσοι      |          2 |         1 |          1 | EL307 |               6.454546 |                     7 |                     5 |
+| AT125   |         3 | AT        | Weinviertel          | Weinviertel          |          4 |         3 |          3 | AT125 |               2.500000 |                     4 |                     2 |
+| FRC14   |         3 | FR        | Yonne                | Yonne                |          4 |         3 |          3 | FRC14 |               3.515625 |                     6 |                     2 |
+| DE27A   |         3 | DE        | Lindau (Bodensee)    | Lindau (Bodensee)    |          3 |         2 |          3 | DE27A |               3.857143 |                    10 |                     2 |
+| CZ052   |         3 | CZ        | Královéhradecký kraj | Královéhradecký kraj |          4 |         2 |          3 | CZ052 |               3.600000 |                     7 |                     2 |
+| ITC13   |         3 | IT        | Biella               | Biella               |          3 |         2 |          3 | ITC13 |               5.066667 |                     8 |                     3 |
+| FRJ15   |         3 | FR        | Pyrénées-Orientales  | Pyrénées-Orientales  |          2 |         2 |          1 | FRJ15 |               6.129032 |                     9 |                     3 |
+| DE934   |         3 | DE        | Lüchow-Dannenberg    | Lüchow-Dannenberg    |          4 |         3 |          3 | DE934 |               5.307692 |                     6 |                     4 |
+| DEB3C   |         3 | DE        | Bad Dürkheim         | Bad Dürkheim         |          4 |         2 |          3 | DEB3C |               4.500000 |                     6 |                     2 |
 
 ``` r
 map_simple_avgs %>%
@@ -899,6 +528,86 @@ map_simple_avgs %>%
   as_tibble() %>% 
   select(-geometry) %>% 
   janitor::clean_names() %>% 
-  filter(cntr_code %in% c("SE", "ES")) %>%
-  write_excel_csv2(here::here("data", "soil_suitability_nuts_3_SE_ES.csv"))
+  filter(cntr_code %in% c("ES")) %>%
+  write_excel_csv2(here::here("data", "soil_suitability_nuts_3_ES.csv"))
 ```
+
+## Swedish map
+
+Apparently we want the older Swedish regions: of which there are 24. See
+the Issue 1 on Github.
+
+``` r
+library(histmaps)
+
+se_map <- get_boundaries(1980, "county")
+
+se_map <- se_map %>% 
+  st_transform(crs = 4326)
+
+se_map %>% 
+  ggplot(aes(fill = name)) +
+  geom_sf(alpha = .5)
+```
+
+![](README_files/figure-commonmark/unnamed-chunk-22-1.png)
+
+We want to crop to only Sweden: this is what the raster file looks like
+now.
+
+``` r
+# st_crop removes the raster region outside of europe
+tif_bbox <- st_crop(tif, se_map %>% st_bbox())
+
+ggplot() +
+  geom_stars(data = tif_bbox)
+```
+
+![](README_files/figure-commonmark/unnamed-chunk-23-1.png)
+
+Now we want to calculate the averages within each polygon, along with
+the min and max values within each polygon.
+
+``` r
+# devtools::install_github("michaeldorman/geobgu")
+library(geobgu)
+
+map_simple_avgs_sweden <-
+  se_map %>% mutate(
+    suitability_class_mean = raster_extract(tif_bbox, se_map, fun = mean, na.rm = TRUE),
+    suitability_class_max = raster_extract(tif_bbox, se_map, fun = max, na.rm = TRUE),
+    suitability_class_min = raster_extract(tif_bbox, se_map, fun = min, na.rm = TRUE)
+  )
+
+map_simple_avgs_sweden <- se_map %>% 
+  bind_cols(map_simple_avgs_sweden$suitability_class_mean %>% as_tibble() %>% rename(suitability_class_mean = V1)) %>% 
+  bind_cols(map_simple_avgs_sweden$suitability_class_max %>% as_tibble() %>% rename(suitability_class_max = V1)) %>%
+  bind_cols(map_simple_avgs_sweden$suitability_class_min %>% as_tibble() %>% rename(suitability_class_min = V1))
+```
+
+This is what the averaging procedure produces:
+
+![](README_files/figure-commonmark/unnamed-chunk-25-1.png)
+
+The distribution of minimum and maximum values is quite erratic. The
+plot below arranges the NUTS2 regions from lowest mean of suitability
+class to largest. The ribbon shows the
+
+![](README_files/figure-commonmark/unnamed-chunk-26-1.png)
+
+Here is an example of 10 random regions.
+
+| geom_id | ref_code     | name          | type   | type_id | start |  end | suitability_class_mean | suitability_class_max | suitability_class_min |
+|--------:|:-------------|:--------------|:-------|:--------|------:|-----:|-----------------------:|----------------------:|----------------------:|
+|   12496 | SE/110000000 | Kristianstads | County | county  |  1971 | 9999 |               4.279070 |                     6 |                     2 |
+|   12506 | SE/130000000 | Hallands      | County | county  |  1974 | 9999 |               5.074380 |                     6 |                     5 |
+|   12502 | SE/120000000 | Skåne         | County | county  |  1971 | 9999 |               2.922330 |                     5 |                     2 |
+|   12547 | SE/010000000 | Stockholms    | County | county  |  1971 | 9999 |               5.401316 |                     6 |                     5 |
+|   12540 | SE/210000000 | Gävleborgs    | County | county  |  1864 | 9999 |               7.456612 |                    10 |                     6 |
+|   12548 | SE/230000000 | Jämtlands     | County | county  |  1974 | 9999 |               8.960954 |                    10 |                     6 |
+|   12532 | SE/180000000 | Örebro        | County | county  |  1974 | 9999 |               6.202830 |                    10 |                     4 |
+|   12555 | SE/250000000 | Norrbottens   | County | county  |  1869 | 9999 |               8.643200 |                    10 |                     6 |
+|   12527 | SE/170000000 | Värmlands     | County | county  |  1971 | 9999 |               6.400891 |                    10 |                     5 |
+|   12537 | SE/200000000 | Dalarnas      | County | county  |     0 | 9999 |               7.388579 |                    10 |                     6 |
+
+Export Data

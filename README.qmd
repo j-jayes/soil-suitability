@@ -9,22 +9,54 @@ execute:
 
 ## Purpose
 
-Collect soil quality data and aggregate up to NUTS2 level to join to Rosés-Wolf database on regional GDP. We do this both for NUTS2 and NUTS3 (for Sweden and Spain).
+Collect soil quality data and aggregate up to NUTS2 level to join to Rosés-Wolf database on regional GDP. We do this both for NUTS2 and NUTS3 (and for Sweden and Spain separately).
 
 ## Download data
-
-You can download the NUTS2 data in excel format at [this link](data/soil_suitability.xlsx)
-
-You can download the NUTS3 data in excel format at [this link](data/soil_suitability_nuts_3.csv)
-
-You can download the NUTS3 data for Spain and Sweden in excel format at [this link](data/soil_suitability_nuts_3_SE_ES.csv)
-
-It looks like this:
 
 ```{r}
 #| echo: false
 library(tidyverse)
 library(gt)
+tibble(
+  type = c("NUTS2 Europe", "NUTS3 Europe", "NUTS3 Spain", "NUTS3 Sweden"),
+  links = c(
+    "data/soil_suitability.xlsx",
+    "data/soil_suitability_nuts_3.csv",
+    "data/soil_suitability_nuts_3_ES.csv",
+    "data/soil_suitability_nuts_3_SE.csv"
+  ),
+  format = c("xls", "csv", "csv", "csv"),
+  logos = c("https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Europe_orthographic_Caucasus_Urals_boundary_%28with_borders%29.svg/1200px-Europe_orthographic_Caucasus_Urals_boundary_%28with_borders%29.svg.png",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Europe_orthographic_Caucasus_Urals_boundary_%28with_borders%29.svg/1200px-Europe_orthographic_Caucasus_Urals_boundary_%28with_borders%29.svg.png",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Bandera_de_Espa%C3%B1a.svg/1920px-Bandera_de_Espa%C3%B1a.svg.png",
+            "https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Flag_of_Sweden.svg/1920px-Flag_of_Sweden.svg.png")
+) %>%
+  mutate(
+    link = glue::glue("<a href = {links}>
+                      <img src='{logos}' width='80' height='80'>
+                                   </a>"),
+    link_text = glue::glue("<a href = {links}>
+                      {type}
+                                   </a>"),
+    link = purrr::map(link, gt::html),
+    link_text = purrr::map(link_text, gt::html)
+  ) %>%
+  select(link, link_text, format) %>%
+  gt() %>%
+  cols_align(columns = c(link, link_text), align = "left") %>% 
+  tab_options(column_labels.hidden = TRUE) %>% 
+  tab_header(title = md("**Download data**")) %>% 
+  as_raw_html(inline_css = TRUE)
+```
+
+
+## What does the data look like?
+
+It looks like this:
+
+```{r}
+#| echo: false
+
 theme_set(theme_light())
 
 
@@ -64,7 +96,7 @@ tribble(
 ) %>% 
   gt::gt() %>% 
   tab_header(title = "FAO-GAEZ 4 metadata") %>% 
-  as_raw_html(inline_css = FALSE)
+  as_raw_html(inline_css = TRUE)
 ```
 
 It is in a raster format - where the earth is broken into tiles.
@@ -379,8 +411,118 @@ map_simple_avgs %>%
   as_tibble() %>% 
   select(-geometry) %>% 
   janitor::clean_names() %>% 
-  filter(cntr_code %in% c("SE", "ES")) %>%
-  write_excel_csv2(here::here("data", "soil_suitability_nuts_3_SE_ES.csv"))
+  filter(cntr_code %in% c("ES")) %>%
+  write_excel_csv2(here::here("data", "soil_suitability_nuts_3_ES.csv"))
 
+```
+
+
+## Swedish map
+
+Apparently we want the older Swedish regions: of which there are 24. See the Issue 1 on Github.
+
+```{r}
+library(histmaps)
+
+se_map <- get_boundaries(1980, "county")
+
+se_map <- se_map %>% 
+  st_transform(crs = 4326)
+
+se_map %>% 
+  ggplot(aes(fill = name)) +
+  geom_sf(alpha = .5)
+
+```
+
+We want to crop to only Sweden: this is what the raster file looks like now.
+
+```{r}
+# st_crop removes the raster region outside of europe
+tif_bbox <- st_crop(tif, se_map %>% st_bbox())
+
+ggplot() +
+  geom_stars(data = tif_bbox)
+```
+
+Now we want to calculate the averages within each polygon, along with the min and max values within each polygon.
+
+```{r}
+# devtools::install_github("michaeldorman/geobgu")
+library(geobgu)
+
+map_simple_avgs_sweden <-
+  se_map %>% mutate(
+    suitability_class_mean = raster_extract(tif_bbox, se_map, fun = mean, na.rm = TRUE),
+    suitability_class_max = raster_extract(tif_bbox, se_map, fun = max, na.rm = TRUE),
+    suitability_class_min = raster_extract(tif_bbox, se_map, fun = min, na.rm = TRUE)
+  )
+
+map_simple_avgs_sweden <- se_map %>% 
+  bind_cols(map_simple_avgs_sweden$suitability_class_mean %>% as_tibble() %>% rename(suitability_class_mean = V1)) %>% 
+  bind_cols(map_simple_avgs_sweden$suitability_class_max %>% as_tibble() %>% rename(suitability_class_max = V1)) %>%
+  bind_cols(map_simple_avgs_sweden$suitability_class_min %>% as_tibble() %>% rename(suitability_class_min = V1))
+```
+
+This is what the averaging procedure produces:
+
+```{r}
+#| echo: false
+
+map_simple_avgs_sweden %>% ggplot() +
+  geom_sf(aes(fill = suitability_class_mean)) +
+  scale_fill_viridis_c() +
+  coord_sf() +
+  labs(fill = "Soil suitability\nfor rainfed wheat\n(mean of class,\nlower is better)")
+```
+
+The distribution of minimum and maximum values is quite erratic. The plot below arranges the NUTS2 regions from lowest mean of suitability class to largest. The ribbon shows the 
+
+```{r}
+#| echo: false
+
+map_simple_avgs_sweden %>%
+  st_set_geometry(NULL) %>%
+  mutate(name = fct_reorder(name, suitability_class_mean)) %>%
+  ggplot(aes(
+    x = name, y = suitability_class_mean,
+    ymin = suitability_class_min,
+    ymax = suitability_class_max,
+    group = 1
+  )) +
+  geom_line() +
+  geom_ribbon(alpha = .3) +
+  labs(
+    x = "NUTS code",
+    y = "Soil suitability index"
+  )
+```
+
+Here is an example of 10 random regions.
+
+```{r}
+#| echo: false
+map_simple_avgs_sweden %>%
+  slice_sample(n = 10) %>% 
+  st_set_geometry(NULL) %>%
+  knitr::kable()
+```
+
+Export Data
+
+```{r}
+#| echo: false
+#| eval: false
+df_sweden_out <- map_simple_avgs_sweden %>% 
+  select(name, contains("suit")) %>% 
+  as_tibble() %>% 
+  select(-geometry)
+
+df_sweden_out %>% 
+  write_csv2(here::here("data", "soil_suitability_nuts_3_SE.csv"))
+
+se_map %>% 
+  select(ref_code, name, type_id) %>% 
+  st_write(here::here("maps", "sweden_24_couties.shp"))
 ```
 
