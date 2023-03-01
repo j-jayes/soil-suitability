@@ -9,11 +9,15 @@ execute:
 
 ## Purpose
 
-Collect soil quality data and aggregate up to NUTS2 level to join to Rosés-Wolf database on regional GDP
+Collect soil quality data and aggregate up to NUTS2 level to join to Rosés-Wolf database on regional GDP. We do this both for NUTS2 and NUTS3 (for Sweden and Spain).
 
 ## Download data
 
-You can download the data in excel format at [this link](data/soil_suitability.xlsx)
+You can download the NUTS2 data in excel format at [this link](data/soil_suitability.xlsx)
+
+You can download the NUTS3 data in excel format at [this link](data/soil_suitability_nuts_3.csv)
+
+You can download the NUTS3 data for Spain and Sweden in excel format at [this link](data/soil_suitability_nuts_3_SE_ES.csv)
 
 It looks like this:
 
@@ -231,4 +235,148 @@ df_out <- df %>%
 #   write.csv(here::here("data", "soil_suitability.csv"))
 ```
 
+## NUTS3 shapefile
+
+The NUTS3 shapefiles are from [Eurostat](https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/nuts)
+
+We're going to work in WGS84 for convenience (EPSG: 4326).
+
+We now need to aggregate up the NUTS3 regions which are joined together in the Rosés-Wolf database on regional GDP for Sweden and Spain.
+
+They are:
+
+```{r}
+#| echo: false
+
+tribble(
+  ~NUTS2_regions, ~Aggregation,
+  "AT12+AT13", "AT123",
+  "DE71+DE72", "DE712",
+  "DE91+DE92", "DE912"
+) %>%
+  gt() %>%
+  tab_header(title = "Aggregations of NUTS2 regions")
+```
+
+The following chunk manipulates the shapefile to make it easier to work with in a WGS84 projection.
+
+```{r}
+library(sf)
+
+map <- read_sf(here::here("maps", "NUTS_RG_01M_2021_4326.shp")) %>% janitor::clean_names()
+
+map_tbl <- map %>% as_tibble()
+
+map_tbl %>%
+  ggplot(aes(geometry = geometry)) +
+  geom_sf() +
+  coord_sf()
+
+# Making the map files smaller
+library(rmapshaper)
+map_simple <- ms_simplify(map, keep = 0.1,
+                                keep_shapes = FALSE)
+
+map_tbl_simple <- map_simple %>% as_tibble()
+
+map_tbl_simple %>% write_rds(here::here("maps", "NUTS3_simple.rds"))
+
+map_simple <- read_rds(here::here("maps", "NUTS3_simple.rds")) %>% 
+  st_as_sf() %>% 
+  filter(levl_code == 3)
+
+map_simple <- map_simple %>% 
+  st_transform(crs = 4326)
+```
+
+We want to crop to only Europe: this is what the raster file looks like now.
+
+```{r}
+# st_crop removes the raster region outside of europe
+tif_bbox <- st_crop(tif, map_simple %>% st_bbox())
+
+ggplot() +
+  geom_stars(data = tif_bbox)
+```
+
+Now we want to calculate the averages within each polygon, along with the min and max values within each polygon.
+
+```{r}
+# devtools::install_github("michaeldorman/geobgu")
+library(geobgu)
+
+map_simple_avgs <-
+  map_simple %>% mutate(
+    suitability_class_mean = raster_extract(tif_bbox, map_simple, fun = mean, na.rm = TRUE),
+    suitability_class_max = raster_extract(tif_bbox, map_simple, fun = max, na.rm = TRUE),
+    suitability_class_min = raster_extract(tif_bbox, map_simple, fun = min, na.rm = TRUE)
+  )
+
+map_simple_avgs <- map_simple %>% 
+  bind_cols(map_simple_avgs$suitability_class_mean %>% as_tibble() %>% rename(suitability_class_mean = V1)) %>% 
+  bind_cols(map_simple_avgs$suitability_class_max %>% as_tibble() %>% rename(suitability_class_max = V1)) %>%
+  bind_cols(map_simple_avgs$suitability_class_min %>% as_tibble() %>% rename(suitability_class_min = V1))
+```
+
+This is what the averaging procedure produces:
+
+```{r}
+#| echo: false
+
+map_simple_avgs %>% ggplot() +
+  geom_sf(aes(fill = suitability_class_mean)) +
+  scale_fill_viridis_c() +
+  coord_sf() +
+  labs(fill = "Soil suitability\nfor rainfed wheat\n(mean of class,\nlower is better)")
+```
+
+The distribution of minimum and maximum values is quite erratic. The plot below arranges the NUTS2 regions from lowest mean of suitability class to largest. The ribbon shows the 
+
+```{r}
+#| echo: false
+
+map_simple_avgs %>%
+  st_set_geometry(NULL) %>%
+  mutate(nuts_id = fct_reorder(nuts_id, suitability_class_mean),
+         rank = rank(nuts_id)) %>%
+  ggplot(aes(
+    x = rank, y = suitability_class_mean,
+    ymin = suitability_class_min,
+    ymax = suitability_class_max,
+    group = 1
+  )) +
+  geom_line() +
+  geom_ribbon(alpha = .3) +
+  labs(
+    x = "NUTS code",
+    y = "Soil suitability index"
+  )
+```
+
+Here is an example of 10 random regions.
+
+```{r}
+#| echo: false
+map_simple_avgs %>%
+  slice_sample(n = 10) %>% 
+  st_set_geometry(NULL) %>%
+  knitr::kable()
+```
+
+```{r}
+map_simple_avgs %>%
+  as_tibble() %>% 
+  select(-geometry) %>% 
+  janitor::clean_names() %>% 
+  # filter(cntr_code %in% c("SE", "ES")) %>% 
+  write_excel_csv2(here::here("data", "soil_suitability_nuts_3.csv"))
+
+map_simple_avgs %>%
+  as_tibble() %>% 
+  select(-geometry) %>% 
+  janitor::clean_names() %>% 
+  filter(cntr_code %in% c("SE", "ES")) %>%
+  write_excel_csv2(here::here("data", "soil_suitability_nuts_3_SE_ES.csv"))
+
+```
 
